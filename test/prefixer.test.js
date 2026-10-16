@@ -82,4 +82,20 @@ describe('Prefixer', () => {
 
     expect(css).toEqual(mocks.ignore.expected);
   });
+
+  test('should prefix files inside the src directory', () => {
+    const { css } = postcss()
+      .use(postcssPrefixer({ prefix: 'prefix-' }))
+      .process(mocks.default.source, { from: path.join(process.cwd(), 'src', 'styles.css') });
+
+    expect(css).toEqual(mocks.default.expected);
+  });
+
+  test('should not prefix files outside the src directory', () => {
+    const { css } = postcss()
+      .use(postcssPrefixer({ prefix: 'prefix-' }))
+      .process(mocks.default.source, { from: path.join(process.cwd(), 'node_modules', 'lib', 'styles.css') });
+
+    expect(css).toEqual(mocks.default.source);
+  });
 });

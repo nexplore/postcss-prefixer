@@ -1,13 +1,16 @@
 {
-  "name": "postcss-prefixer",
-  "version": "3.0.0",
+  "name": "@nexplore/postcss-prefixer",
+  "version": "3.1.0",
   "description": "postcss plugin to prefix all css selector classes and ids",
   "main": "lib/prefixer.js",
+  "files": [
+    "lib"
+  ],
   "engines": {
     "node": "^10 || ^12 || >=14"
   },
   "dependencies": {
-    "css-selector-tokenizer": "^0.7.2"
+    "css-selector-tokenizer": "^0.8.0"
   },
   "peerDependencies": {
     "postcss": "^8.0.0"
@@ -30,11 +33,6 @@
   "jest": {
     "testEnvironment": "node"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm test"
-    }
-  },
   "keywords": [
     "css",
     "postcss",
@@ -48,10 +46,13 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git://github.com/marceloucker/postcss-prefixer.git"
+    "url": "git+https://github.com/nexplore/postcss-prefixer.git"
   },
   "bugs": {
     "url": "https://github.com/marceloucker/postcss-prefixer/issues"
   },
-  "homepage": "https://github.com/marceloucker/postcss-prefixer#readme"
+  "homepage": "https://github.com/marceloucker/postcss-prefixer#readme",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  }
 }
