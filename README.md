@@ -4,7 +4,17 @@
 
 The IES NG project's style encapsulation solution requires classname prefixing to be restricted to files within the *src* directory 
 only. To avoid the maintenance overhead associated with the original package's `ignore` option, we 
-decided to fork the repository and implement a whitelist solution. This enhancement is available in the *process-src-dir-only* branch.
+decided to fork the repository and implement a whitelist solution.
+
+The fork is published to GitHub Packages as `@nexplore/postcss-prefixer` when a GitHub release is created. Installing it under the original name keeps existing PostCSS configs working:
+
+```json
+"devDependencies": {
+  "postcss-prefixer": "npm:@nexplore/postcss-prefixer@^3.1.0"
+}
+```
+
+with `@nexplore:registry=https://npm.pkg.github.com` in `.npmrc`.
 
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
